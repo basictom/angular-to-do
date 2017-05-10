@@ -5,20 +5,27 @@
   <link rel="stylesheet" href="./lib/bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="./styles/main.css" />
 </head>
-<body>
+<body ng-app="TodoApp">
 
   <div class="container">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavCtrl">
       <div class="container">
-        <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-        </li>
+        <ul class="nav navbar-nav" ng-repeat="thingy in navItems">
+        <li><a href="#">{{thingy.name}}</a></li>
       </ul>
       </div>
     </nav>
+  </div>
+  <div class="container">
+    <div class="jumbotron">
+      <h2>Hello Angular</h2>
+      <p>How you doin'...</p>
+    </div>
+  </div>
+
+  <div ng-controller="ItemCtrl">
+    {{dog}}
+    {{24+12}}
   </div>
 
 
@@ -27,6 +34,7 @@
   integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
   crossorigin="anonymous"></script>
   <script src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="./lib/bower_components/angular/angular.min.js"></script>
   <script src="./javascripts/scripts.js"></script>
 </body>
 </html>
