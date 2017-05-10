@@ -10,5 +10,12 @@ app.controller("NavCtrl", ($scope) => {
 
 app.controller("ItemCtrl", ($scope) => {
   $scope.dog = "woof";
-
+  $scope.showListView = true;
+  $scope.newItem = () => {
+    // console.log("new item");
+    $scope.showListView = true;
+  }
+  $scope.allItems = () => {
+    $scope.showListView = false;
+  }
 });
