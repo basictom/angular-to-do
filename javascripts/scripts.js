@@ -11,6 +11,7 @@ app.controller("NavCtrl", ($scope) => {
 app.controller("ItemCtrl", ($scope) => {
   $scope.dog = "woof";
   $scope.showListView = true;
+  // $scope.searchText = 
   $scope.items = [
     {
       id: 0,
