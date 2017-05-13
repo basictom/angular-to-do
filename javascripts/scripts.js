@@ -1,7 +1,4 @@
-// console.log("working..");
 "use strict";
-
-var app = angular.module("TodoApp", []);
 
 app.controller("NavCtrl", ($scope) => {
   $scope.cat = "Meow";
@@ -11,27 +8,8 @@ app.controller("NavCtrl", ($scope) => {
 app.controller("ItemCtrl", ($scope) => {
   $scope.dog = "woof";
   $scope.showListView = true;
-  // $scope.searchText = 
-  $scope.items = [
-    {
-      id: 0,
-      task: "mow the lawn",
-      isCompleted: true,
-      assignedTo: "Callan",
-    },
-    {
-      id: 1,
-      task: "grade quizzes",
-      isCompleted: false,
-      assignedTo: "Lauren",
-    },
-    {
-      id: 2,
-      task: "take a nap",
-      isCompleted: false,
-      assignedTo: "Zoe",
-    }
-  ];
+  // $scope.searchText =
+  $scope.items = [];
 
   $scope.newItem = () => {
     // console.log("new item");
