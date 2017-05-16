@@ -8,14 +8,7 @@
 </head>
 <body ng-app="TodoApp">
 
-  <div class="container">
-    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavCtrl">
-      <div class="container">
-        <ul class="nav navbar-nav" ng-repeat="thingy in navItems">
-        <li><a href="#">{{thingy.name}}</a></li>
-      </ul>
-      </div>
-    </nav>
+  <div ng-include="'partials/nav-bar.html'">
   </div>
 
   <div class="container">

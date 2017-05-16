@@ -2,7 +2,7 @@ app.controller("ItemNewCtrl", function($http, $q, $scope, FIREBASE_CONFIG) {
 
 
   $scope.addNewItem = () => {
-    $scope.newTask.isCompleted = false;
+    $scope.newTask.isCompleted = true;
     postNewItem($scope.newTask)
     .then((response) => {
       $scope.newTask = {};
