@@ -24,7 +24,16 @@
     </div>
   </div>
 
-  <div ng-controller="ItemCtrl">
+  <div class="container">
+    <div class="row">
+      <h1>NG To Do</h1>
+      <div class="col-xs-8 col-xs-offset-2" ng-view>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- <div ng-controller="ItemCtrl">
 
     <div class="row">
       <div class="col-xs-6 col-xs-offset-3">
@@ -82,7 +91,7 @@
     </div>
 
 
-  </div>
+  </div> -->
   <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
   <script
   src="https://code.jquery.com/jquery-3.2.1.slim.js"
@@ -90,6 +99,7 @@
   crossorigin="anonymous"></script>
   <script src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="./lib/bower_components/angular/angular.min.js"></script>
+  <script src="./lib/bower_components/angular-route/angular-route.min.js"></script>
   <script src="./javascripts/app.js"></script>
   <script src="./javascripts/AppConstants.js"></script>
   <script src="./javascripts/scripts.js"></script>
