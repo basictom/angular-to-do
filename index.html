@@ -17,6 +17,7 @@
       </div>
     </nav>
   </div>
+
   <div class="container">
     <div class="jumbotron">
       <h2>Hello Angular</h2>
@@ -28,70 +29,11 @@
     <div class="row">
       <h1>NG To Do</h1>
       <div class="col-xs-8 col-xs-offset-2" ng-view>
-
       </div>
     </div>
   </div>
 
-  <!-- <div ng-controller="ItemCtrl">
 
-    <div class="row">
-      <div class="col-xs-6 col-xs-offset-3">
-        <button class="col-xs-6 btn btn-success" ng-click="newItem()">New Item</button>
-      <button class="col-xs-6 btn btn-info" ng-click="allItems()">All Item</button></div>
-    </div>
-    <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
-        <h1>NG To Do</h1>
-        <div ng-show="!showListView">
-          <h3>New To Do</h3>
-          <form>
-            <div class="form-group">
-              <label>Task Description</label>
-              <input type="text" class="form-control" placeholder="Some important task" ng-model="newTask.task" />
-            </div>
-            <div class="form-group">
-              <label>Assigned To</label>
-              <input type="text" class="form-control" placeholder="Zoe" ng-model="newTask.assignedTo" />
-            </div>
-            <button class="btn btn-default" ng-click="addNewItem()">Submit</button>
-          </form>
-        </div>
-        <div ng-show="showListView">
-          <input type="text" name="" placeholder="Search for ..." ng-model="searchText" />
-                    <h3>Todo</h3>
-                        <div ng-repeat="item in items | filter:{isCompleted:false} | filter:searchText">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <div class="col-xs-1"><input type="checkbox" name="" ng-checked="item.isCompleted"/></div>
-                                    <div class="col-xs-7">{{item.task}}</div>
-                                    <div class="col-xs-1 col-xs-offset-2">{{item.assignedTo}}</div>
-                                    <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o"></button></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3>Completed</h3>
-                        <div ng-repeat="item in items | filter:{isCompleted:true}">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <div class="col-xs-1"><input type="checkbox" name="" ng-checked="item.isCompleted"/></div>
-                                    <div class="col-xs-7">{{item.task}}</div>
-                                    <div class="col-xs-1  col-xs-offset-2">{{item.isChecked}}</div>
-                                    <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o"></button></div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-        </div>
-      </div>
-    </div>
-
-
-  </div> -->
   <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
   <script
   src="https://code.jquery.com/jquery-3.2.1.slim.js"
@@ -101,7 +43,12 @@
   <script src="./lib/bower_components/angular/angular.min.js"></script>
   <script src="./lib/bower_components/angular-route/angular-route.min.js"></script>
   <script src="./javascripts/app.js"></script>
+  <script src="./javascripts/app-config.js"></script>
   <script src="./javascripts/AppConstants.js"></script>
-  <script src="./javascripts/scripts.js"></script>
+  <script src="./javascripts/controllers/item-edit-ctrl.js"></script>
+  <script src="./javascripts/controllers/item-list-ctrl.js"></script>
+  <script src="./javascripts/controllers/item-nav-ctrl.js"></script>
+  <script src="./javascripts/controllers/item-new-ctrl.js"></script>
+  <script src="./javascripts/controllers/item-view-ctrl.js"></script>
 </body>
 </html>
