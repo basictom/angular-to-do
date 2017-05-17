@@ -13,5 +13,13 @@ app.controller("ItemListCtrl", function($scope, ItemFactory) {
 
   getItems();
 
+  $scope.deleteItem = (id) => {
+    ItemFactory.deletz(id).then(() => {
+      getItems();
+    }).catch((error) => {
+      console.log("delete", error);
+    });
+  };
+
 
 });
