@@ -23,6 +23,7 @@ app.controller("ItemListCtrl", function($scope, ItemFactory) {
 
 
   $scope.inputChange = (item) => {
+    console.log("input change",item);
     ItemFactory.editItem(item)
     .then(() => {
     }).catch((error) => {
