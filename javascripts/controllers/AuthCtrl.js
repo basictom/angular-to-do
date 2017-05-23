@@ -4,6 +4,12 @@ app.controller("AuthCtrl", function($rootScope, $scope, $location, FIREBASE_CONF
     password: "123456"
   };
 
+  if($location.path() === '/logout'){
+    AuthFactory.logout();
+    $rootScope.user = {};
+    $location.url('/auth');
+  }
+
   let logMeIn = () => {
     AuthFactory.authenticate($scope.auth).then((userCreds) => {
       console.log("user creds", userCreds);
@@ -37,5 +43,6 @@ app.controller("AuthCtrl", function($rootScope, $scope, $location, FIREBASE_CONF
   $scope.loginUser = () => {
     logMeIn();
   };
+
 
 });

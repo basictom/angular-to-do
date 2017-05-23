@@ -20,6 +20,10 @@ app.config(function($routeProvider) {  // $routeProvider --- angular key word
     templateUrl: '/partials/item-view.html',
     controller: 'ItemViewCtrl'
   })
+  .when('/logout', {
+    templateUrl: '/partials/auth.html',
+    controller: 'AuthCtrl'
+  })
   .when('/item/edit/:id', {
     templateUrl: '/partials/item-new.html',
     controller: 'ItemEditCtrl'
