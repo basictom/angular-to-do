@@ -1,4 +1,5 @@
 app.controller("AuthCtrl", function($rootScope, $scope, $location, FIREBASE_CONFIG, AuthFactory, UserFactory){
+  $scope.alerts = [];
   $scope.auth = {
     email: "a@a.com",
     password: "123456"
@@ -12,10 +13,10 @@ app.controller("AuthCtrl", function($rootScope, $scope, $location, FIREBASE_CONF
 
   let logMeIn = () => {
     AuthFactory.authenticate($scope.auth).then((userCreds) => {
-      console.log("user creds", userCreds);
+      // console.log("user creds", userCreds);
       return UserFactory.getUser(userCreds.uid);
     }, (error) => {
-      console.log("auth error", error);
+      $scope.alerts.push({msg: error.message});
     }).then((user) => {
       $rootScope.user = user;
       $location.url('/items/list');
