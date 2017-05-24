@@ -7,6 +7,7 @@ app.controller("ItemNewCtrl", function($rootScope, $http, $location, $q, $scope,
     $scope.newTask.uid = $rootScope.user.uid;
     ItemFactory.postNewItem($scope.newTask)
     .then(() => {
+      $scope.dueDate = {};
       $scope.newTask = {};
       $location.url("/items/list");
     }).catch((error) => {
