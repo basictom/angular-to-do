@@ -1,10 +1,10 @@
-app.controller("ItemListCtrl", function($scope, ItemFactory) {
+app.controller("ItemListCtrl", function($rootScope, $scope, ItemFactory) {
 
   $scope.items = [];
 
 
   let getItems = () => {
-    ItemFactory.getItemList().then((itemz) => {
+    ItemFactory.getItemList($rootScope.user.uid).then((itemz) => {
       $scope.items = itemz;
     }).catch((error) => {
       console.log("get error", error);
@@ -23,7 +23,7 @@ app.controller("ItemListCtrl", function($scope, ItemFactory) {
 
 
   $scope.inputChange = (item) => {
-    console.log("input change",item);
+    console.log("input change", item);
     ItemFactory.editItem(item)
     .then(() => {
     }).catch((error) => {

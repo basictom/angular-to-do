@@ -1,13 +1,12 @@
 app.factory("ItemFactory", function($q, $http, FIREBASE_CONFIG){
 
 
-  let getItemList = () => {
+  let getItemList = (userId) => {
     let itemz = [];
     return $q((resolve, reject) => {
-      $http.get(`${FIREBASE_CONFIG.databaseURL}/items.json`)
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/items.json?orderBy="uid"&equalTo="${userId}"`)
       .then((fbItems) => {
           let itemCollection = fbItems.data;
-          console.log(itemCollection);
           if(itemCollection !== null){
             Object.keys(itemCollection).forEach((key) => {
               itemCollection[key].id=key;
@@ -27,7 +26,6 @@ app.factory("ItemFactory", function($q, $http, FIREBASE_CONFIG){
       $http.get(`${FIREBASE_CONFIG.databaseURL}/items/${id}.json`)
       .then((results) => {
         results.data.id = id;
-        console.log(results);
         resolve(results);
       }).catch((error) => {
         reject(error);
@@ -59,6 +57,7 @@ app.factory("ItemFactory", function($q, $http, FIREBASE_CONFIG){
   };
 
   let editItem = (item) => {
+    console.log(item);
     return $q((resolve, reject) => {
       $http.put(`${FIREBASE_CONFIG.databaseURL}/items/${item.id}.json`, JSON.stringify({
         assignedTo: item.assignedTo,
