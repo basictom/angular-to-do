@@ -11,15 +11,16 @@
   <div ng-include="'partials/nav-bar.html'">
   </div>
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="jumbotron">
       <h2>Hello Angular</h2>
       <p>How you doin'...</p>
     </div>
-  </div>
+  </div> -->
 
   <div class="container">
     <div class="row">
+      <br /><br />
       <h1>NG To Do</h1>
       <div class="col-xs-8 col-xs-offset-2" ng-view>
       </div>
@@ -41,7 +42,10 @@
   <script src="./javascripts/AppConstants.js"></script>
 
   <script src="./javascripts/factories/ItemFactory.js"></script>
+  <script src="./javascripts/factories/auth-factory.js"></script>
+  <script src="./javascripts/factories/user-factory.js"></script>
 
+  <script src="./javascripts/controllers/AuthCtrl.js"></script>
   <script src="./javascripts/controllers/item-edit-ctrl.js"></script>
   <script src="./javascripts/controllers/item-list-ctrl.js"></script>
   <script src="./javascripts/controllers/item-nav-ctrl.js"></script>
