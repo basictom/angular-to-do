@@ -4,7 +4,7 @@ app.controller("ItemEditCtrl", function($routeParams, $scope, ItemFactory, $loca
   ItemFactory.getSingleItem($routeParams.id)
   .then((results) => {
       // console.log("results", results);
-    results.data.dueDate = new date(results.data.dueDate);
+    results.data.dueDate = new Date(results.data.dueDate);
     $scope.newTask = results.data;
   }).catch((error) => {
     console.log("single", error);

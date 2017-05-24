@@ -62,7 +62,9 @@ app.factory("ItemFactory", function($q, $http, FIREBASE_CONFIG){
       $http.put(`${FIREBASE_CONFIG.databaseURL}/items/${item.id}.json`, JSON.stringify({
         assignedTo: item.assignedTo,
         isCompleted: item.isCompleted,
-        task: item.task
+        task: item.task,
+        uid: item.uid,
+				dueDate: item.dueDate
       }))
       .then((results) => {
         resolve(results);

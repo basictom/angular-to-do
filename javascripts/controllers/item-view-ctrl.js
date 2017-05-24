@@ -1,14 +1,20 @@
-app.controller("ItemViewCtrl", function($routeParams, $scope, ItemFactory) {
+app.controller("ItemViewCtrl", function($routeParams, $scope, ItemFactory, ToolFactory) {
 
   $scope.selectedItem = {};
+  $scope.tools = [];
 
   ItemFactory.getSingleItem($routeParams.id)
   .then((results) => {
-      console.log("results", results);
     $scope.selectedItem = results.data;
   }).catch((error) => {
     console.log("signle]]", error);
   });
 
-
+  ToolFactory.getToolList($routeParams.id)
+  .then((results) => {
+    console.log("tool results", results);
+    $scope.tools = results;
+  }).catch((error) => {
+    console.log("error in get tool list", error);
+  });
 });
